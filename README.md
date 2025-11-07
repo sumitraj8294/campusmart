@@ -9,9 +9,6 @@ It provides a secure and efficient platform for managing listings, users, and tr
 
 - 🧑‍💻 **User Authentication** (Login, Signup, Logout)
 - 🛍️ **Product Management** (Add, Update, Delete, View)
-- 🔍 **Search and Filter Products** by category or keywords
-- 💬 **Buy/Sell Communication** between users
-- 🧾 **Order and Transaction Management**
 - 📦 **RESTful APIs** ready for frontend integration
 - 🧠 **Spring Boot + MongoDB/MySQL** based architecture
 
