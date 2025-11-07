@@ -1,0 +1,41 @@
+/* ========== GLOBAL STYLES ========== */
+:root {
+  --primary: #00b894;
+  --secondary: #0984e3;
+  --highlight: #ffeaa7;
+  --danger: #d63031;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --bg: #ffffff;
+  --border: #dfe6e9;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

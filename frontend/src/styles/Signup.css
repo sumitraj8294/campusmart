@@ -1,0 +1,18 @@
+@import "./Login.css";
+
+/* Optional signup-specific overrides */
+.auth-title {
+  color: var(--secondary);
+}
+.auth-message {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #00b894; /* success green */
+  font-weight: 500;
+}
+
+.auth-message:has(.error) {
+  color: #d63031; /* red for error */
+}
+

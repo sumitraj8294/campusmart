@@ -1,0 +1,192 @@
+:root {
+  --primary: #00b894;
+  --secondary: #0984e3;
+  --text: #2d3436;
+  --bg: #ffffff;
+  --border: #dfe6e9;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   NAVBAR BASE
+   =============================== */
+.cm-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  background: var(--bg);
+  box-shadow: 0 2px 8px var(--shadow);
+  z-index: 1000;
+}
+
+.cm-nav__bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo (left) */
+.cm-nav__logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Desktop Links (right) */
+.cm-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.cm-nav__links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cm-nav__links a:hover {
+  color: var(--secondary);
+}
+
+/* Login button */
+.cm-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cm-btn--primary {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.cm-btn--primary:hover {
+  background: var(--secondary);
+}
+
+/* Hamburger icon (mobile only) */
+.cm-nav__hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 0;
+  margin-left: auto;
+}
+
+/* ===============================
+   MOBILE DRAWER
+   =============================== */
+.cm-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 12px var(--shadow);
+  transition: right 0.35s ease-in-out;
+  z-index: 1010;
+  display: flex;
+  flex-direction: column;
+}
+
+.cm-drawer.is-open {
+  right: 0;
+}
+
+/* Drawer close button (top-right inside) */
+.cm-drawer__close {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 20px 20px 0 0;
+}
+
+.cm-drawer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 24px;
+}
+
+.cm-drawer__content a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.cm-drawer__content a:hover {
+  color: var(--primary);
+}
+
+/* Overlay */
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1005;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   RESPONSIVE STYLES
+   =============================== */
+@media (max-width: 992px) {
+  .cm-nav__links {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cm-nav__links {
+    display: none; /* hide desktop links */
+  }
+
+  .cm-nav__hamburger {
+    display: inline-flex; /* show hamburger */
+  }
+
+  .cm-drawer {
+    width: 75%;
+    max-width: 300px;
+  }
+
+  .cm-drawer__content {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cm-nav__logo {
+    font-size: 1.5rem;
+  }
+
+  .cm-btn {
+    font-size: 0.9rem;
+    padding: 7px 12px;
+  }
+}
+
+/* Add padding so content isn't hidden behind fixed nav */
+body {
+  padding-top: 64px;
+}
